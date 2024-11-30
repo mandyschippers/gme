@@ -1,0 +1,136 @@
+/* Base styles */
+body {
+    font-family: 'Orbitron', sans-serif; /* Cyberpunk-inspired font */
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d; /* Darker background */
+    color: #e0e0e0; /* Neutral light text for readability */
+  }
+  
+  h1, h2 {
+    margin: 0;
+    padding: 10px 0;
+    color: #0affff; /* Neon cyan */
+    text-shadow: 0 0 10px #0affff, 0 0 20px #0affff; /* Glowing effect */
+  }
+  
+  textarea {
+    width: 90%;
+    height: 85%;
+    resize: none;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+    font-family: inherit;
+    outline: none;
+    border: 2px solid #ff00ff; /* Neon pink border */
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+  
+  /* App container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff00ff, #0affff);
+    border-bottom: 2px solid #222222;
+    color: #0d0d0d; /* Contrast with gradient */
+  }
+  
+  .header h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+  
+  /* Content layout */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    flex-grow: 1;
+    padding: 10px;
+    background: #0d0d0d; /* Keeps it dark and consistent */
+  }
+  
+  /* Sidebar and notes */
+  .sidebar, .notes {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #0affff;
+    box-shadow: 0 0 15px #0affff;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 5px 0;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .sidebar li:hover {
+    color: #0affff;
+    text-shadow: 0 0 10px #0affff;
+  }
+  
+  /* Main content */
+  .main-content {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+    text-shadow: 0 0 5px #0affff;
+  }
+  
+  .main-content h2 {
+    color: #0affff;
+  }
+  
+  /* Buttons (if added later) */
+  button {
+    background: #ff00ff;
+    color: #0d0d0d;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff00ff;
+    transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background: #0affff;
+    box-shadow: 0 0 15px #0affff;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr; /* Single column for small screens */
+    }
+    .sidebar, .main-content, .notes {
+      margin-bottom: 10px;
+    }
+
+    textarea {
+        height: auto;
+    }
+  }
+  

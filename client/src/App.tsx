@@ -1,24 +1,15 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import SignIn from './components/templates/signIn/signIn';
-const App = () => {
-  const [message, setMessage] = useState('');
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Emulator from "./pages/homePage/emulator";
 
-  useEffect(() => {
-    const fetchMessage = async () => {
-      try {
-        const response = await axios.get('http://localhost:5001/api/hello');
-        setMessage(response.data.message); // Access the "message" property from the API response
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setMessage('Failed to load message from the server.');
-      }
-    };
-
-    fetchMessage();
-  }, []);
-
-  return (<><h1>{message}</h1><SignIn /></>);
-};
+function App() {
+  return (
+    <Router>
+      {/* <NavMenu /> */}
+      <Routes>
+        <Route path="/" element={<Emulator />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
